@@ -1,0 +1,1143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Document Editor | Design Studio</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app-container">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar" id="sidebar">
+
+        <div class="brand">
+            <div class="brand-icon">D</div>
+            <div>
+                <h2>Docu<span>Studio</span></h2>
+                <small>DOCUMENT DESIGNER</small>
+            </div>
+        </div>
+
+        <div class="sidebar-label">WORKSPACE</div>
+
+        <nav class="sidebar-nav">
+
+            <button class="nav-item active" data-template="id-card">
+                <span>▣</span> Identity Card
+            </button>
+
+            <button class="nav-item" data-template="driver-card">
+                <span>▤</span> Driver Profile
+            </button>
+
+            <button class="nav-item" data-template="passport">
+                <span>▧</span> Passport Design
+            </button>
+
+            <button class="nav-item" data-template="flight-ticket">
+                <span>✈</span> Flight Ticket
+            </button>
+
+        </nav>
+
+        <div class="sidebar-label">LIBRARY</div>
+
+        <nav class="sidebar-nav">
+            <button class="nav-item" data-template="my-documents">
+                <span>▣</span> My Documents
+            </button>
+        </nav>
+
+        <div class="sidebar-bottom">
+
+            <div class="sidebar-help">
+                <h4>Creative Workspace</h4>
+                <p>Design documents and personal keepsakes.</p>
+            </div>
+
+            <div class="version">DOCUSTUDIO v2.1</div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN APPLICATION -->
+    <main class="main-content">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+
+            <div class="topbar-left">
+
+                <button class="sidebar-toggle" id="sidebarToggle">
+                    ☰
+                </button>
+
+                <div>
+                    <h3>Document Design Studio</h3>
+                    <p>Creative document editing workspace</p>
+                </div>
+
+            </div>
+
+            <div class="topbar-right">
+
+                <button class="top-button" id="resetDesign">
+                    Reset
+                </button>
+
+                <button class="top-button primary-button" id="saveDesign">
+                    Save Design
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- PAGE CONTENT -->
+        <div class="page-content">
+
+            <!-- WELCOME -->
+            <section class="welcome-banner">
+
+                <div>
+                    <span class="welcome-tag">CREATIVE DESIGN STUDIO</span>
+
+                    <h1>Design Something Unique.</h1>
+
+                    <p>
+                        Create, customise and download your own
+                         document designs.
+                    </p>
+                </div>
+
+                <div class="welcome-decoration">✦</div>
+
+            </section>
+
+
+            <!-- TEMPLATE SELECTOR -->
+            <section class="template-selector">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Choose Your Template</h2>
+                        <p>Select a document design to get started.</p>
+                    </div>
+                </div>
+
+                <div class="template-grid">
+
+                    <button class="template-card active"
+                    data-template="id-card">
+
+                        <span class="template-icon">▣</span>
+                        <h3>Identity Card</h3>
+                        <p>Indentity design</p>
+
+                    </button>
+
+                    <button class="template-card"
+                    data-template="driver-card">
+
+                        <span class="template-icon">▤</span>
+                        <h3>Driver Licence</h3>
+                        <p>Detailed driver-themed keepsake</p>
+
+                    </button>
+
+                    <button class="template-card"
+                    data-template="passport">
+
+                        <span class="template-icon">▧</span>
+                        <h3>Passport</h3>
+                        <p> Passport Document</p>
+
+                    </button>
+
+                    <button class="template-card"
+                    data-template="flight-ticket">
+
+                        <span class="template-icon">✈</span>
+                        <h3>Flight Ticket</h3>
+                        <p>International airline-inspired design</p>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+
+            <!-- EDITOR WORKSPACE -->
+            <section class="editor-workspace">
+
+
+                <!-- LEFT EDITING PANEL -->
+                <div class="editing-panel">
+
+                    <div class="panel-heading">
+                        <div>
+                            <h2>Edit Information</h2>
+                            <p>Enter your design details below.</p>
+                        </div>
+                    </div>
+
+
+                    <!-- IDENTITY CARD FORM -->
+                    <form class="template-form active"
+                    id="idCardForm"
+                    data-form="id-card">
+
+                        <div class="form-section-title">
+                            Personal Information
+                        </div>
+
+                        <label for="idFullName">Full Name</label>
+                        <input type="text" id="idFullName"
+                        placeholder="Enter full name">
+
+                        <label for="idDob">Date of Birth</label>
+                        <input type="date" id="idDob">
+
+                        <label for="idGender">Gender</label>
+                        <select id="idGender">
+                            <option value="">Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+
+                        <label for="idNationality">Nationality</label>
+                        <input type="text" id="idNationality"
+                        placeholder="Enter nationality">
+
+                        <label for="idBirthplace">Place of Birth</label>
+                        <input type="text" id="idBirthplace"
+                        placeholder="Enter place of birth">
+
+                        <label for="idReference">Sample Reference</label>
+                        <input type="text" id="idReference"
+                        placeholder="SAMPLE-00001">
+
+                        <div class="form-section-title">
+                            Additional Information
+                        </div>
+
+                        <label for="idIssue">Date of Issue</label>
+                        <input type="date" id="idIssue">
+
+                        <label for="idExpiry">Expiry Date</label>
+                        <input type="date" id="idExpiry">
+
+                        <label for="idPhoto">Upload Photograph</label>
+                        <input type="file" id="idPhoto" accept="image/*">
+
+                        <div class="form-note">
+                            Fictional creative identity card.
+                            Not valid for official identification.
+                        </div>
+
+                    </form>
+
+
+
+                    <!-- DRIVER PROFILE FORM -->
+                    <form class="template-form"
+                    id="driverForm"
+                    data-form="driver-card">
+
+                        <div class="form-section-title">
+                            Personal Information
+                        </div>
+
+                        <label for="driverLastName">Last Name</label>
+                        <input type="text" id="driverLastName"
+                        placeholder="Enter last name">
+
+                        <label for="driverFirstName">First Name</label>
+                        <input type="text" id="driverFirstName"
+                        placeholder="Enter first name">
+
+                        <label for="driverMiddleName">Middle Name</label>
+                        <input type="text" id="driverMiddleName"
+                        placeholder="Enter middle name">
+
+                        <label for="driverDob">Date of Birth</label>
+                        <input type="date" id="driverDob">
+
+                        <label for="driverNationality">Nationality</label>
+                        <input type="text" id="driverNationality"
+                        placeholder="Enter nationality">
+
+                        <label for="driverGender">Gender</label>
+                        <select id="driverGender">
+                            <option value="">Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+
+                        <label for="driverAddress">Residential Address</label>
+                        <textarea id="driverAddress"
+                        placeholder="Enter sample address"></textarea>
+
+                        <div class="form-section-title">
+                            Physical Profile
+                        </div>
+
+                        <label for="driverHeight">Height</label>
+                        <input type="text" id="driverHeight"
+                        placeholder="e.g. 1.75 m">
+
+                        <label for="driverWeight">Weight</label>
+                        <input type="text" id="driverWeight"
+                        placeholder="e.g. 70 kg">
+
+                        <label for="driverBloodGroup">Blood Group</label>
+                        <select id="driverBloodGroup">
+                            <option value="">Select blood group</option>
+                            <option>A+</option>
+                            <option>A-</option>
+                            <option>B+</option>
+                            <option>B-</option>
+                            <option>AB+</option>
+                            <option>AB-</option>
+                            <option>O+</option>
+                            <option>O-</option>
+                            <option>Not specified</option>
+                        </select>
+
+
+                        <label for="driverClass">Display Class</label>
+                        <select id="driverClass">
+                            <option>Class A</option>
+                            <option>Class B</option>
+                            <option>Class C</option>
+                            <option>Class D</option>
+                            <option>Class E</option>
+                        </select>
+
+                        <label for="driverUse">Vehicle Preference</label>
+                        <select id="driverUse">
+                            <option>Private</option>
+                            <option>Commercial</option>
+                            <option>Personal Interest</option>
+                        </select>
+
+                        <div class="form-section-title">
+                            Sample Record Information
+                        </div>
+
+                        <label for="driverReference">Sample Reference</label>
+                        <input type="text" id="driverReference"
+                        placeholder="DEMO-DRIVER-001">
+
+                        <label for="driverIssue">Creation Date</label>
+                        <input type="date" id="driverIssue">
+
+                        <label for="driverExpiry">Design Expiry</label>
+                        <input type="date" id="driverExpiry">
+
+                        <label for="driverFirstIssue">Profile Start Date</label>
+                        <input type="date" id="driverFirstIssue">
+
+                        <label for="driverAgency">Creative Agency Code</label>
+                        <input type="text" id="driverAgency"
+                        placeholder="DEMO-A01">
+
+                        <div class="form-section-title">
+                            Additional Notes
+                        </div>
+
+                        <label for="driverConditions">Conditions</label>
+                        <input type="text" id="driverConditions"
+                        placeholder="Enter sample conditions">
+
+                        <label for="driverRestrictions">Restrictions</label>
+                        <input type="text" id="driverRestrictions"
+                        placeholder="Enter sample restrictions">
+
+                        <label for="driverEndorsements">Endorsements</label>
+                        <input type="text" id="driverEndorsements"
+                        placeholder="Enter sample endorsements">
+
+                        <label for="driverNextOfKin">Emergency Contact Name</label>
+                        <input type="text" id="driverNextOfKin"
+                        placeholder="Enter fictional contact name">
+
+                        <label for="driverPhoto">Upload Photograph</label>
+                        <input type="file" id="driverPhoto"
+                        accept="image/*">
+
+                        <div class="form-note">
+                            Generate free to use Driver's Licence
+                        </div>
+
+                    </form>
+
+
+
+                    <!-- PASSPORT FORM -->
+                    <form class="template-form"
+                    id="passportForm"
+                    data-form="passport">
+
+                        <div class="form-section-title">
+                            Personal Information
+                        </div>
+
+                        <label for="passportName">Full Name</label>
+                        <input type="text" id="passportName"
+                        placeholder="Enter full name">
+
+                        <label for="passportNationality">Nationality</label>
+                        <input type="text" id="passportNationality"
+                        placeholder="Enter nationality">
+
+                        <label for="passportDob">Date of Birth</label>
+                        <input type="date" id="passportDob">
+
+                        <label for="passportGender">Gender</label>
+                        <select id="passportGender">
+                            <option value="">Select gender</option>
+                            <option>Male</option>
+                            <option>Female</option>
+                            <option>Other</option>
+                        </select>
+
+                        <label for="passportBirthplace">Place of Birth</label>
+                        <input type="text" id="passportBirthplace"
+                        placeholder="Enter place of birth">
+
+                        <label for="passportReference">Sample Reference</label>
+                        <input type="text" id="passportReference"
+                        placeholder="DEMO-PASSPORT-001">
+
+                        <div class="form-section-title">
+                            Design Information
+                        </div>
+
+                        <label for="passportIssue">Creation Date</label>
+                        <input type="date" id="passportIssue">
+
+                        <label for="passportExpiry">Design Expiry</label>
+                        <input type="date" id="passportExpiry">
+
+                        <label for="passportPlace">Design Origin</label>
+                        <input type="text" id="passportPlace"
+                        placeholder="Enter fictional origin">
+
+                        <label for="passportPhoto">Upload Photograph</label>
+                        <input type="file" id="passportPhoto"
+                        accept="image/*">
+
+                        <div class="form-note">
+                            You can generate ticket for free use
+                        </div>
+
+                    </form>
+
+
+
+                    <!-- FLIGHT TICKET FORM -->
+                    <form class="template-form"
+                    id="flightForm"
+                    data-form="flight-ticket">
+
+                        <div class="form-section-title">
+                            Passenger Information
+                        </div>
+
+                        <label for="passengerName">Passenger Name</label>
+                        <input type="text" id="passengerName"
+                        placeholder="Enter passenger name">
+
+                        <label for="airlineName"> Air Ticket</label>
+                        <input type="text" id="airlineName"
+                        placeholder="e.g. Skyline Creative Air">
+
+                        <div class="form-section-title">
+                            Journey Information
+                        </div>
+
+                        <label for="departureCity">Departure City</label>
+                        <input type="text" id="departureCity"
+                        placeholder="Enter departure city">
+
+                        <label for="destinationCity">Destination</label>
+                        <input type="text" id="destinationCity"
+                        placeholder="Enter destination">
+
+                        <label for="departureDate">Travel Date</label>
+                        <input type="date" id="departureDate">
+
+                        <label for="departureTime">Departure Time</label>
+                        <input type="time" id="departureTime">
+
+                        <label for="arrivalTime">Arrival Time</label>
+                        <input type="time" id="arrivalTime">
+
+                        <label for="arrivalDate">Arrival Date</label>
+                        <input type="date" id="arrivalDate">
+
+                        <div class="form-section-title">
+                            Ticket Details
+                        </div>
+
+                        <label for="flightNumber">Sample Flight Code</label>
+                        <input type="text" id="flightNumber"
+                        placeholder="DEMO-001">
+
+                        <label for="seatNumber">Display Seat</label>
+                        <input type="text" id="seatNumber"
+                        placeholder="12A">
+
+                        <label for="flightGate">Display Gate</label>
+                        <input type="text" id="flightGate"
+                        placeholder="DEMO GATE">
+
+                        <label for="flightClass">Display Category</label>
+                        <select id="flightClass">
+                            <option>Economy</option>
+                            <option>Premuim Economy</option>
+                            <option>Business Class</option>
+                               <option>First Class</option>
+                          </select>
+
+                        <label for="boardingTime">Display Boarding Time</label>
+                        <input type="time" id="boardingTime">
+
+                        <label for="baggageAllowance">Display Baggage</label>
+                        <input type="text" id="baggageAllowance"
+                        placeholder="e.g. 20 kg sample">
+
+                        <div class="form-section-title">
+                            Colour Theme
+                        </div>
+
+                        <label for="flightTheme">Airline-Inspired Theme</label>
+                        <select id="flightTheme">
+                            <option value="ocean">Ocean Blue</option>
+                            <option value="violet">Violet</option>
+                            <option value="emerald">Emerald Green</option>
+                            <option value="sunset">Sunset Orange</option>
+                            <option value="crimson">Crimson Red</option>
+                        </select>
+
+                        <div class="form-note">
+                           Make travel tickets easily.
+                        </div>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- CENTER PREVIEW PANEL -->
+                <div class="preview-panel">
+
+                    <div class="preview-heading">
+
+                        <div>
+                            <h2>Live Design Preview</h2>
+                            <p>Your design appears here.</p>
+                        </div>
+
+                        <span class="preview-status">LIVE PREVIEW</span>
+
+                    </div>
+
+
+                    <div class="preview-stage">
+
+
+                        <!-- IDENTITY CARD PREVIEW -->
+                        <div class="document-preview active"
+                        id="idCardPreview">
+
+                            <div class="identity-card">
+
+                                <div class="identity-pattern"></div>
+
+                                <div class="sample-watermark">
+                                    FICTIONAL SAMPLE
+                                </div>
+
+                                <div class="identity-header">
+
+                                    <div class="identity-brand">
+                                        CREATIVE PROFILE
+                                    </div>
+
+                                    <div class="identity-label">
+                                        NOT VALID
+                                    </div>
+
+                                </div>
+
+                                <div class="identity-content">
+
+                                    <div class="identity-photo">
+
+                                        <img id="previewIdPhoto"
+                                        src="" alt="Sample portrait">
+
+                                        <span>PHOTO</span>
+
+                                    </div>
+
+                                    <div class="identity-details">
+
+                                        <div class="identity-field">
+                                            <small>FULL NAME</small>
+                                            <h3 id="previewIdName">YOUR NAME</h3>
+                                        </div>
+
+                                        <div class="identity-field">
+                                            <small>DATE OF BIRTH</small>
+                                            <h3 id="previewIdDob">DD/MM/YYYY</h3>
+                                        </div>
+
+                                        <div class="identity-field">
+                                            <small>GENDER</small>
+                                            <h3 id="previewIdGender">---</h3>
+                                        </div>
+
+                                        <div class="identity-field">
+                                            <small>NATIONALITY</small>
+                                            <h3 id="previewIdNationality">---</h3>
+                                        </div>
+
+                                        <div class="identity-field">
+                                            <small>PLACE OF BIRTH</small>
+                                            <h3 id="previewIdBirthplace">---</h3>
+                                        </div>
+
+                                        <div class="identity-field">
+                                            <small>SAMPLE REFERENCE</small>
+                                            <h3 id="previewIdReference">SAMPLE-00001</h3>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="identity-footer">
+                                    <span>FICTIONAL DESIGN</span>
+                                    <span id="previewIdExpiry">DESIGN SAMPLE</span>
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- DRIVER PROFILE PREVIEW -->
+                        <div class="document-preview"
+                        id="driverPreview">
+
+                            <div class="driver-card">
+
+                                <div class="driver-pattern"></div>
+
+                                <div class="driver-header">
+
+                                    <div class="driver-country">
+                                        DOCUSTUDIO CREATIVE COLLECTION
+                                    </div>
+
+                                    <h2>DRIVER PROFILE</h2>
+
+                                    <span>FICTIONAL SAMPLE • NOT VALID</span>
+
+                                </div>
+
+                                <div class="driver-content">
+
+                                    <div class="driver-photo">
+
+                                        <img id="previewDriverPhoto"
+                                        src="" alt="Sample portrait">
+
+                                        <span>PHOTO</span>
+
+                                    </div>
+
+                                    <div class="driver-information">
+
+                                        <div class="driver-name-field">
+                                            <small>LAST NAME / FIRST NAME / MIDDLE NAME</small>
+                                            <h3 id="previewDriverName">YOUR NAME</h3>
+                                        </div>
+
+                                        <div class="driver-field-grid">
+
+                                            <div>
+                                                <small>DATE OF BIRTH</small>
+                                                <h3 id="previewDriverDob">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>NATIONALITY</small>
+                                                <h3 id="previewDriverNationality">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>GENDER</small>
+                                                <h3 id="previewDriverGender">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>HEIGHT</small>
+                                                <h3 id="previewDriverHeight">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>WEIGHT</small>
+                                                <h3 id="previewDriverWeight">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>BLOOD GROUP</small>
+                                                <h3 id="previewDriverBloodGroup">---</h3>
+                                            </div>
+
+                                        </div>
+
+                                        <div class="driver-address-field">
+                                            <small>RESIDENTIAL ADDRESS</small>
+                                            <h3 id="previewDriverAddress">---</h3>
+                                        </div>
+
+                                        <div class="driver-field-grid">
+
+                                            <div>
+                                                <small>PROFILE CATEGORY</small>
+                                                <h3 id="previewDriverCategory">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>FAVOURITE VEHICLE</small>
+                                                <h3 id="previewDriverVehicle">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>DISPLAY CLASS</small>
+                                                <h3 id="previewDriverClass">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>VEHICLE PREFERENCE</small>
+                                                <h3 id="previewDriverUse">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>SAMPLE REFERENCE</small>
+                                                <h3 id="previewDriverReference">DEMO-DRIVER-001</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>CREATIVE AGENCY CODE</small>
+                                                <h3 id="previewDriverAgency">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>CREATION DATE</small>
+                                                <h3 id="previewDriverIssue">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>DESIGN EXPIRY</small>
+                                                <h3 id="previewDriverExpiry">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>PROFILE START DATE</small>
+                                                <h3 id="previewDriverFirstIssue">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>CONDITIONS</small>
+                                                <h3 id="previewDriverConditions">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>RESTRICTIONS</small>
+                                                <h3 id="previewDriverRestrictions">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>ENDORSEMENTS</small>
+                                                <h3 id="previewDriverEndorsements">---</h3>
+                                            </div>
+
+                                            <div>
+                                                <small>EMERGENCY CONTACT</small>
+                                                <h3 id="previewDriverNextOfKin">---</h3>
+                                            </div>
+
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <div class="driver-footer">
+                                    FICTIONAL DRIVER PROFILE • NOT A LICENCE
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- PASSPORT PREVIEW -->
+                        <div class="document-preview"
+                        id="passportPreview">
+
+                            <div class="passport-design">
+
+                                <div class="passport-cover">
+
+                                    <div class="passport-watermark">
+                                        FICTIONAL SAMPLE
+                                    </div>
+
+                                    <div class="passport-cover-top">
+                                        THE WORLD OF IMAGINATION
+                                    </div>
+
+                                    <div class="passport-emblem">✦</div>
+
+                                    <h2>PASSPORT</h2>
+
+                                    <p>FICTIONAL KEEPSAKE DESIGN</p>
+
+                                    <div class="passport-invalid">
+                                        NOT VALID FOR TRAVEL
+                                    </div>
+
+                                </div>
+
+                                <div class="passport-inside">
+
+                                    <div class="passport-inside-header">
+                                        <h3>PERSONAL PROFILE</h3>
+                                        <span>FICTIONAL SAMPLE</span>
+                                    </div>
+
+                                    <div class="passport-inside-content">
+
+                                        <div class="passport-photo">
+
+                                            <img id="previewPassportPhoto"
+                                            src="" alt="Sample portrait">
+
+                                        </div>
+
+                                        <div class="passport-fields">
+
+                                            <small>FULL NAME</small>
+                                            <h4 id="previewPassportName">YOUR NAME</h4>
+
+                                            <small>NATIONALITY</small>
+                                            <h4 id="previewPassportNationality">---</h4>
+
+                                            <small>DATE OF BIRTH</small>
+                                            <h4 id="previewPassportDob">---</h4>
+
+                                            <small>GENDER</small>
+                                            <h4 id="previewPassportGender">---</h4>
+
+                                            <small>PLACE OF BIRTH</small>
+                                            <h4 id="previewPassportBirthplace">---</h4>
+
+                                            <small>SAMPLE REFERENCE</small>
+                                            <h4 id="previewPassportReference">DEMO-PASSPORT-001</h4>
+
+                                            <small>CREATION DATE</small>
+                                            <h4 id="previewPassportIssue">---</h4>
+
+                                            <small>DESIGN EXPIRY</small>
+                                            <h4 id="previewPassportExpiry">---</h4>
+
+                                            <small>DESIGN ORIGIN</small>
+                                            <h4 id="previewPassportPlace">---</h4>
+
+                                        </div>
+
+                                    </div>
+
+                                    <div class="passport-footer">
+                                        FICTIONAL DOCUMENT • NOT VALID FOR TRAVEL
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+
+                        <!-- FLIGHT TICKET PREVIEW -->
+                        <div class="document-preview"
+                        id="flightPreview">
+
+                            <div class="boarding-ticket" id="boardingTicket">
+
+                                <div class="ticket-header">
+
+                                    <div>
+                                        <h2 id="previewAirline">SKYLINE CREATIVE AIR</h2>
+                                        <small>TRAVEL KEEPSAKE COLLECTION</small>
+                                    </div>
+
+                                    <div class="ticket-stamp">
+                                        SAMPLE
+                                    </div>
+
+                                </div>
+
+                                <div class="ticket-warning">
+                                    FICTIONAL SAMPLE — NOT VALID FOR BOARDING OR TRAVEL
+                                </div>
+
+                                <div class="ticket-title">
+                                    <h2>TRAVEL PASS</h2>
+                                    <span>DECORATIVE DESIGN</span>
+                                </div>
+
+                                <div class="ticket-passenger">
+
+                                    <small>PASSENGER NAME</small>
+                                    <h3 id="previewPassenger">YOUR NAME</h3>
+
+                                </div>
+
+                                <div class="ticket-route">
+
+                                    <div>
+                                        <small>FROM</small>
+                                        <h2 id="previewDeparture">---</h2>
+                                    </div>
+
+                                    <div class="route-arrow">✈</div>
+
+                                    <div>
+                                        <small>TO</small>
+                                        <h2 id="previewDestination">---</h2>
+                                    </div>
+
+                                </div>
+
+                                <div class="ticket-details">
+
+                                    <div>
+                                        <small>FLIGHT DISPLAY</small>
+                                        <h3 id="previewFlightNumber">DEMO-001</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>DEPARTURE DATE</small>
+                                        <h3 id="previewFlightDate">---</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>DEPARTURE TIME</small>
+                                        <h3 id="previewDepartureTime">---</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>ARRIVAL TIME</small>
+                                        <h3 id="previewArrivalTime">---</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>SEAT DISPLAY</small>
+                                        <h3 id="previewSeat">---</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>GATE DISPLAY</small>
+                                        <h3 id="previewGate">---</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>CATEGORY</small>
+                                        <h3 id="previewClass">STANDARD</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>BOARDING DISPLAY</small>
+                                        <h3 id="previewBoardingTime">---</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>ARRIVAL DATE</small>
+                                        <h3 id="previewArrivalDate">---</h3>
+                                    </div>
+
+                                    <div>
+                                        <small>BAGGAGE DISPLAY</small>
+                                        <h3 id="previewBaggage">---</h3>
+                                    </div>
+
+                                </div>
+
+                                <div class="ticket-divider"></div>
+
+                                <div class="ticket-bottom">
+
+                                    <div>
+                                        <h3>FICTIONAL TRAVEL KEEPSAKE</h3>
+                                        <p>
+                                            NOT VALID FOR CHECK-IN,
+                                            SECURITY OR BOARDING.
+                                        </p>
+                                    </div>
+
+                                    <div class="ticket-sample-code"
+                                    aria-label="Decorative non-scannable sample graphic">
+
+                                        <div class="sample-code-grid">
+                                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                            <span></span><span></span><span></span><span></span><span></span><span></span><span></span>
+                                        </div>
+
+                                        <small>DECORATIVE SAMPLE</small>
+
+                                    </div>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+
+                    <!-- PREVIEW ACTIONS -->
+                    <div class="preview-actions">
+
+                        <button class="action-button" id="previewReset">
+                            Reset Preview
+                        </button>
+
+                        <button class="action-button download-action"
+                        id="downloadDesign">
+                            Download Design
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- RIGHT DESIGN SETTINGS -->
+                <div class="properties-panel">
+
+                    <div class="panel-heading">
+                        <h2>Design Properties</h2>
+                        <p>Customise your document appearance.</p>
+                    </div>
+
+                    <div class="property-group">
+                        <label for="backgroundColor">Background Colour</label>
+                        <input type="color" id="backgroundColor"
+                        value="#DCE8F4">
+                    </div>
+
+                    <div class="property-group">
+                        <label for="textColor">Text Colour</label>
+                        <input type="color" id="textColor"
+                        value="#26364D">
+                    </div>
+
+                    <div class="property-group">
+                        <label for="fontFamily">Font Family</label>
+                        <select id="fontFamily">
+                            <option value="Arial">Arial</option>
+                            <option value="Georgia">Georgia</option>
+                            <option value="Verdana">Verdana</option>
+                            <option value="Times New Roman">Times New Roman</option>
+                        </select>
+                    </div>
+
+                    <div class="property-group">
+                        <label for="designSize">Document Size</label>
+                        <select id="designSize">
+                            <option value="standard">Standard</option>
+                            <option value="large">Large</option>
+                        </select>
+                    </div>
+
+                    <div class="property-divider"></div>
+
+                    <div class="property-information">
+                        <h4>Design Information</h4>
+                        <p>
+                            All templates are fictional creative designs.
+                            They cannot be used as official identification,
+                            government documents or travel credentials.
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- MY DOCUMENTS -->
+            <section class="saved-documents-section" id="my-documents">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>My Documents</h2>
+                        <p>Your saved creative designs.</p>
+                    </div>
+                </div>
+
+                <div class="saved-documents-grid" id="savedDocumentsGrid">
+
+                    <div class="empty-library">
+                        <h3>No Saved Designs</h3>
+                        <p>Your saved documents will appear here.</p>
+                    </div>
+
+                </div>
+
+            </section>
+
+        </div>
+
+    </main>
+
+</div>
+
+<script src="script.js" defer></script>
+
+</body>
+</html>
